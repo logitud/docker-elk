@@ -9,5 +9,31 @@ network.host: 0.0.0.0
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-xpack.html
 #
 xpack.license.self_generated.type: trial
-xpack.security.enabled: true
-xpack.monitoring.collection.enabled: true
+xpack.security.enabled: false #true
+xpack.monitoring.collection.enabled: false #true
+
+###
+
+# snapshot path
+path.repo: /opt/elasticsearch/snapshot
+
+#cluster.routing.allocation.disk.threshold_enabled: true
+#cluster.routing.allocation.disk.watermark.flood_stage: 2gb
+#cluster.routing.allocation.disk.watermark.low: 10gb
+#cluster.routing.allocation.disk.watermark.high: 3gb
+
+#cluster.routing.allocation.disk.threshold_enabled: true
+#cluster.routing.allocation.disk.watermark.flood_stage: 10gb
+#cluster.routing.allocation.disk.watermark.low: 30gb
+#cluster.routing.allocation.disk.watermark.high: 20gb
+#index.blocks.read_only_allow_delete: false
+http.cors.allow-credentials: true
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+http.cors.allow-methods: OPTIONS, HEAD, GET, POST, PUT, DELETE
+http.cors.allow-headers: X-Requested-With, X-Auth-Token, Content-Type, Content-Length, Authorization, Access-Control-Allow-Headers, Accept, Access-Control-Allow-Origin
+
+## Use single node discovery in order to disable production mode and avoid bootstrap checks
+## see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
+#
+discovery.type: single-node
