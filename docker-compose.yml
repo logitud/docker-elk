@@ -65,7 +65,12 @@ services:
     depends_on:
       - elasticsearch
     logging: *logging
-
+  apm-server:
+    extends:
+      file: ./extensions/apm-server/apm-server-compose.yml
+      service: apm-server
+    depends_on:
+      - elasticsearch
 networks:
   elk:
     driver: bridge

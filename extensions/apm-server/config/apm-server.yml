@@ -2,13 +2,12 @@ apm-server:
   host: apm-server:8200
   secret_token: changeme
   # shutdown_timeout: 15s
-output:
-  elasticsearch:
-    hosts: ["http://elasticsearch:9200"]
+output.elasticsearch:
+    hosts: ["elasticsearch:9200"]
     #username: elastic
     #password: changeme
-setup:
-  kibana:
+setup.kibana:
+    enabled: true
     host: "kibana:5601"
 
 logging:
